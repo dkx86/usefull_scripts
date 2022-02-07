@@ -2,7 +2,7 @@
 
 ################################# LICENSE #############################################
 #                                                                                     #
-#	'make_backup_simple.sh' shell script to make backup of the direcory using rsync.  #
+#	'make_backup_simple.sh' shell script to make backup of the directory using rsync.  #
 #    Copyright (C) 2022  Dmitry Kuznetsov aka dkx86                                   #
 #                                                                                     #
 #    This program is free software: you can redistribute it and/or modify             #
@@ -29,10 +29,10 @@
 #                                                                                     #
 #######################################################################################
 
-# path to direcory we want to backup
+# path to directory we want to backup
 SOURCE_DIR_PATH='</set/path/to/source/directory/here>'
 
-#path to direcory with all backups
+#path to directory with all backups
 BACKUP_ROOTDIR_PATH='</set/path/to/destination/directory/here>'
 
 update_files() {
@@ -58,10 +58,4 @@ if [ "$1" = "--del" ]
 		update_files 
 		find_deleted_files 
 fi
-
-
-
-
-
-
 

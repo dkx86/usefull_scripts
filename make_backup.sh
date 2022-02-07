@@ -2,7 +2,7 @@
 
 ################################# LICENSE #########################################
 #                                                                                 #
-#	'make_backup.sh' shell script to make backup of the direcory using rsync.     #
+#	'make_backup.sh' shell script to make backup of the directory using rsync.     #
 #    Copyright (C) 2022  Dmitry Kuznetsov aka dkx86                               #
 #                                                                                 #
 #    This program is free software: you can redistribute it and/or modify         #
@@ -20,19 +20,19 @@
 #                                                                                 #
 ################################# EXAMPLE #########################################
 #                                                                                 #
-# 1. ./make_backup.sh /mnt/d/test_soure /mnt/d/test_backup_root/                  #
-#	 This will backup 'test_soure' to '/mnt/d/test_backup_root/test_soure'        #
+# 1. ./make_backup.sh /mnt/d/test_source /mnt/d/test_backup_root/                  #
+#	 This will backup 'test_source' to '/mnt/d/test_backup_root/test_source'        #
 #                                                                                 #
-# 2. ./make_backup.sh /mnt/d/test_soure /mnt/d/test_backup_root --del             #
-# 	 This will delete from '/mnt/d/test_backup_root/test_soure' all files,        #
-#	 deleted in '/mnt/d/test_soure' direcoty.                                     #
+# 2. ./make_backup.sh /mnt/d/test_source /mnt/d/test_backup_root --del             #
+# 	 This will delete from '/mnt/d/test_backup_root/test_source' all files,        #
+#	 deleted in '/mnt/d/test_source' directory.                                     #
 #                                                                                 #
 ###################################################################################
 
-# path to direcory we want to backup
+# path to directory we want to backup
 SOURCE_DIR_PATH=$1
 
-#path to direcory with all backups
+#path to directory with all backups
 BACKUP_ROOTDIR_PATH=$2
 
 update_files() {
@@ -52,13 +52,13 @@ delete_files() {
 
 if [ -z "$1" ]
   then 
-	echo "No argument for source direcory path supplied!"
+	echo "No argument for source directory path supplied!"
 	exit 1	
 fi
 
 if [ -z "$2" ]
   then 
-	echo "No argument for backup root direcory path supplied!"
+	echo "No argument for backup root directory path supplied!"
 	exit 1	
 fi
 
@@ -69,10 +69,4 @@ if [ "$3" = "--del" ]
 		update_files 
 		find_deleted_files 
 fi
-
-
-
-
-
-
 
